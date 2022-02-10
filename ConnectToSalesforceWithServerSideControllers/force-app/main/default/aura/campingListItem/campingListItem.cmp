@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name="item" type="Camping_Item__c" required="true"/>
+	<lightning:card title="My Camping Items" iconName="action:goal">
+        <p class="slds-var-p-horizontal_small">Item Name: {!v.item.Name}</p>
+        <p class="slds-var-p-horizontal_small">Price: <lightning:formattedNumber value="{!v.item.Price__c }" style="currency"/></p>
+        <p class="slds-var-p-horizontal_small">Quantity: <lightning:formattedNumber value="{!v.item.Quantity__c }" minimumFractionDigits ="2"/></p>
+        <p>
+            <lightning:input type="toggle"
+                             label="Packed?"
+                             name="packed"
+                             class="slds-var-p-horizontal_small"
+                             checked="{!v.item.Packed__c}"
+                             messageToggleActive="Yes"
+                             messageToggleInactive="No"
+            />
+        </p>
+    </lightning:card>
+</aura:component>
